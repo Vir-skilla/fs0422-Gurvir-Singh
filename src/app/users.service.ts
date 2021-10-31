@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { User } from './models/user';
 
@@ -5,28 +6,16 @@ import { User } from './models/user';
   providedIn: 'root'
 })
 export class UsersService {
-  private users:User[] =[
-    {
-      email:'c@fff.com',
-      id:1,
-      name:"carlo",
-      role:'user'
-    },
-    {
-      email:'luc@fff.com',
-      id:2,
-      name:"luca",
-      role:'admin'
-    }
-  ]
+  url="http://localhost:4201/users"
+  
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   getUsers(){
-    return this.users
+    return this.http.get<User[]>(this.url)
   }
 
   getUser(id:number){
-    return this.users.find(user=>user.id==id)
+    return this.http.get<User>(`${this.url}/${id}`)
   }
 }

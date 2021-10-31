@@ -28,10 +28,10 @@ export class PostDetailsPage implements OnInit {
   constructor(private router: ActivatedRoute, private postsSrv: PostsService) {}
 
   ngOnInit(): void {
-    this.sub = this.router.params.subscribe((params) => {
+    this.sub = this.router.params.subscribe(async (params) => {
       const id = +params['id'];
       console.log(id);
-      this.post = this.postsSrv.getPost(id);
+      this.post = await this.postsSrv.getPost(id).toPromise();
     });
   }
 

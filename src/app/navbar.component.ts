@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthData, AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -45,7 +46,7 @@ import { Component, OnInit } from '@angular/core';
                 >Posts non attivi</a
               >
             </li>
-            <li class="nav-item">
+            <li *ngIf="user" class="nav-item">
               <a
                 class="nav-link"
                 [routerLink]="['/users']"
@@ -53,7 +54,29 @@ import { Component, OnInit } from '@angular/core';
                 >Users</a
               >
             </li>
+            <li *ngIf="!user" class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['/login']"
+                routerLinkActive="active"
+                >Login</a
+              >
+            </li>
+            <li *ngIf="!user" class="nav-item">
+              <a
+                class="nav-link"
+                [routerLink]="['/registration']"
+                routerLinkActive="active"
+                >Registrati</a
+              >
+            </li>
           </ul>
+
+          <h6 *ngIf="user">
+            Benvenuto {{user.user.name}}
+          </h6>
+          <button *ngIf="user" (click)="logout()" class="btn btn-danger">logout</button>
+
         </div>
       </div>
     </nav>
@@ -61,7 +84,15 @@ import { Component, OnInit } from '@angular/core';
   styles: [],
 })
 export class NavbarComponent implements OnInit {
-  constructor() {}
+  user!: AuthData | null;
+  constructor(private authSrv: AuthService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.authSrv.user$.subscribe((user) => {
+      this.user = user;
+    });
+  }
+  logout() {
+    this.authSrv.logout();
+  }
 }

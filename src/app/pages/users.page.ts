@@ -20,7 +20,7 @@ export class UsersPage implements OnInit {
   users!: User[];
   constructor(private usersSrv: UsersService) {}
 
-  ngOnInit(): void {
-    this.users = this.usersSrv.getUsers();
+  async ngOnInit() {
+    this.users = await this.usersSrv.getUsers().toPromise();
   }
 }

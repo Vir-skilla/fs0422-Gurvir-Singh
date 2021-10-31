@@ -8,7 +8,6 @@ import { UsersService } from '../users.service';
     <ng-container *ngIf="user; else elseTemplate">
       <h3>{{user.name}}</h3>
       <p>email: {{user.email}}</p>
-      <p>ruolo: {{user.role}}</p>
     </ng-container>
     <ng-template #elseTemplate>
       <p>utente non trovato</p>
@@ -22,10 +21,10 @@ export class UsersDetailsPage implements OnInit {
 user:User|undefined
   constructor(private router:ActivatedRoute, private userSrv:UsersService) { }
 
-  ngOnInit(): void {
-    this.router.params.subscribe(params=>{
+   ngOnInit() {
+    this.router.params.subscribe(async params=>{
       const id = +params['id']
-      this.user = this.userSrv.getUser(id)
+      this.user = await this.userSrv.getUser(id).toPromise()
     })
   }
 

@@ -13,6 +13,9 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { PostDetailsPage } from './pages/post-details.page';
 import { UsersPage } from './pages/users.page';
 import { UsersDetailsPage } from './pages/users-details.page';
+import { HttpClientModule } from "@angular/common/http";
+import { AuthModule } from './auth/auth.module';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes:Route[] = [
   {
@@ -38,6 +41,7 @@ const routes:Route[] = [
   {
     path:"users",
     component:UsersPage,
+    canActivate:[AuthGuard],
     children:[
       {
         path:":id",
@@ -67,7 +71,9 @@ const routes:Route[] = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AuthModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -20,13 +20,13 @@ export class ActivePostsPage implements OnInit {
   constructor(private postsSrv:PostsService) {}
 
   async ngOnInit() {
-    const posts = await this.postsSrv.getPosts()
+    const posts = await this.postsSrv.getPosts().toPromise()
     this.posts = posts;
     console.log(this.posts);
   }
 
-  onInactivePost(id:number,i:number){
-    this.postsSrv.updatePost({active:false},id)
+  async onInactivePost(id:number,i:number){
+    await this.postsSrv.updatePost({active:false},id).toPromise()
     this.posts.splice(i,1)
   }
 }
