@@ -1,6 +1,6 @@
-@function textContrast($bg-color){
+@function textContrast($color){
 
-    @if(lightness($bg-color) < 50){
+    @if(lightness($color) < 50){
         @return white;
     }@else{
         @return black;

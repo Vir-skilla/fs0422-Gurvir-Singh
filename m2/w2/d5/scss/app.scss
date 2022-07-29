@@ -1,24 +1,11 @@
+
+@import "variables";
 @import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import "perfonts";
 @import "mixins";
 @import "animazioni";
-@import "perfonts";
 @import "bottoni";
 @import "function";
-
-$purple-dark: #9926f0;
-$purple-light: #BB6EF5;
-$pink: #d122e3;
-$footer: #151414;
-
-$primary: $purple-dark;
-$secondary: $pink;
-
-
-$accordion-padding-y: 1.5rem;
-$accordion-padding-x: 1.5rem;
-$accordion-icon-color: $primary;
-$accordion-icon-active-color: $secondary;
-
 
 
 .bi {
@@ -39,6 +26,7 @@ footer .bi{
     padding: 10rem 0 0 0;
     width: 100%;
     height: 100%;
+
 }
 
 .intros {
@@ -227,7 +215,7 @@ footer .bi{
 
 
         &--title {
-            color: $white;
+            color: $textFooter;
             text-decoration: none;
             font-size: 1rem;
 
@@ -239,7 +227,7 @@ footer .bi{
 
         &--subtitle {
             font-size: 0.8rem;
-            color: $gray-600;
+            color: $textFooter;
             text-decoration: none;
 
             @include media-breakpoint-up(sm) {
