@@ -1,0 +1,17 @@
+
+<div *ngIf="isLoading">
+    <p>Recupero Task...</p>
+</div>
+
+
+
+<div *ngIf="!isLoading">
+    <div *ngIf="listaTask.length == 0">
+        <p>Non ci sono Task completati.</p>
+    </div>
+    <tr *ngFor="let item of listaTask">
+        <ng-container *ngIf="item.completed">
+            <td>{{ item.title }}</td>
+        </ng-container>
+    </tr>
+</div>

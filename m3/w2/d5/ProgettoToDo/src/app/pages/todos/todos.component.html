@@ -1,0 +1,18 @@
+<div *ngIf="isLoading">
+    <p>Recupero Task...</p>
+</div>
+
+<div *ngIf="!isLoading">
+    <div *ngIf="listaTask.length == 0">
+        <p>Non ci sono Task ToDo.</p>
+    </div>
+    <input type="text" [(ngModel)]="nomeTask"><button (click)="addTask(nomeTask)">+</button>
+    <tr *ngFor="let item of listaTask">
+        <ng-container *ngIf="!item.completed">
+            <td>{{ item.title }}</td>
+            <button class="completed" (click)="completedTask(this.item.id)">✅</button>
+        </ng-container>
+    </tr>
+</div>
+
+
