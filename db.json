@@ -5,6 +5,12 @@
       "password": "$2a$10$FmpmVT2Xt0AZYGDNqIbgNeGo6OZNc3gsbr9BJ31u/2jY403c/Dl2O",
       "name": "nico",
       "id": 1
+    },
+    {
+      "email": "vjnvjn@ajkvsdn.ti",
+      "password": "$2a$10$sOvBZ90G7LMkpbDbqsMAUuCJgiUjzEYf1cEE22/HVUoWBwdDaB5B6",
+      "name": "gurvir",
+      "id": 2
     }
   ],
   "posts": [
@@ -12,7 +18,7 @@
       "id": 1,
       "body": "Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
       "title": "titolo",
-      "active": true,
+      "active": false,
       "type": "news",
       "author": "marcoss"
     },
@@ -20,7 +26,7 @@
       "id": 2,
       "body": "Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
       "title": "Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
-      "active": true,
+      "active": false,
       "type": "education",
       "author": "Lusa"
     },
@@ -36,7 +42,7 @@
       "id": 4,
       "body": "Sit minim deserunt enim enim nisi. Eiusmod incididunt dolore et ea anim. Non exercitation id voluptate et velit quis anim officia fugiat esse laborum nisi fugiat non.",
       "title": "Dolor velit sint tempor culpa cupidatat ipsum do ad tempor eiusmod.",
-      "active": false,
+      "active": true,
       "type": "news",
       "author": "Mario"
     }

@@ -17,15 +17,26 @@ export interface AuthData {
   providedIn: 'root',
 })
 export class AuthService {
+
+
+  isUserLogged():boolean{
+    console.log(localStorage.getItem('user'))
+    return localStorage.getItem('user') != null
+  }
   jwtHelper = new JwtHelperService()
   url = 'http://localhost:4201';
   private authSubj = new BehaviorSubject<null | AuthData>(null);
 
   user$ = this.authSubj.asObservable();
-  timeoutLogout:any
+  timeoutLogout: any
 
-  constructor(private http: HttpClient, private router:Router) {
+  constructor(private http: HttpClient, private router: Router) {
     this.restore()
+  }
+
+  getAccessToken():string{
+    let db = localStorage.getItem('user')
+    return db ? JSON.parse(db).accessToken : null
   }
 
   login(data: { email: string; password: string }) {
@@ -49,14 +60,14 @@ export class AuthService {
     }
     this.authSubj.next(userdata)
 
-    this.autoLogout(userdata )
+    this.autoLogout(userdata)
   }
 
   registration(data: { name: string; email: string; password: string }) {
     return this.http.post(`${this.url}/register`, data);
   }
 
-  logout(){
+  logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user')
     this.router.navigate(['/login'])
@@ -65,10 +76,10 @@ export class AuthService {
     }
   }
 
-  autoLogout(data:AuthData){
+  autoLogout(data: AuthData) {
     const exDate = this.jwtHelper.getTokenExpirationDate(data.accessToken) as Date
     const exMs = exDate.getTime() - new Date().getTime()
-     this.timeoutLogout = setTimeout(() => {
+    this.timeoutLogout = setTimeout(() => {
       this.logout()
     }, exMs);
   }

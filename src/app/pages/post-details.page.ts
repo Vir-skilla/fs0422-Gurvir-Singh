@@ -15,6 +15,7 @@ import { PostsService } from '../posts.service';
         <p>Categoria: {{post.type}}</p>
         <p>Autore: {{post.author}}</p>
       </ng-container>
+      
     </div>
     <ng-template #elseTemplate>
       <h1 class="text-center mt-5">post non trovato</h1>

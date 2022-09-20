@@ -33,7 +33,7 @@ import { AuthService } from './auth.service';
             type="password"
           />
         </div>
-        <button type="submit" [disabled]="form.invalid" class="btn btn-primary mt-4">Registrati
+        <button type="submit" class="btn btn-primary mt-4">Registrati
           <span *ngIf="isLoading" class="spinner-border spinner-border-sm" role="status" ></span>
         </button>
     </form>

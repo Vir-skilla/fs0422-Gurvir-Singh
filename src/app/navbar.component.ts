@@ -30,7 +30,7 @@ import { AuthData, AuthService } from './auth/auth.service';
                 >Home</a
               >
             </li>
-            <li class="nav-item">
+            <li *ngIf="isLogged()" class="nav-item">
               <a
                 class="nav-link"
                 [routerLink]="['/active-posts']"
@@ -38,7 +38,7 @@ import { AuthData, AuthService } from './auth/auth.service';
                 >Posts attivi</a
               >
             </li>
-            <li class="nav-item">
+            <li *ngIf="isLogged()" class="nav-item">
               <a
                 class="nav-link"
                 [routerLink]="['/inactive-posts']"
@@ -94,5 +94,8 @@ export class NavbarComponent implements OnInit {
   }
   logout() {
     this.authSrv.logout();
+  }
+  isLogged():boolean {
+    return this.authSrv.isUserLogged()
   }
 }

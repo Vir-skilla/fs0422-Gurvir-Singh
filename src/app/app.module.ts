@@ -24,24 +24,30 @@ const routes:Route[] = [
   },
   {
     path:"active-posts",
-    component:ActivePostsPage
+    component:ActivePostsPage,
+    canActivate:[AuthGuard],
+
   },
   {
     path:"inactive-posts",
-    component:InactivePostsPage
+    component:InactivePostsPage,
+    canActivate:[AuthGuard],
+
   },
   {
     path:"active-posts/:id",
-    component:PostDetailsPage
+    component:PostDetailsPage,
+    canActivate:[AuthGuard],
   },
   {
     path:"inactive-posts/:id",
-    component:PostDetailsPage
+    component:PostDetailsPage,
+    canActivate:[AuthGuard],
+
   },
   {
     path:"users",
     component:UsersPage,
-    canActivate:[AuthGuard],
     children:[
       {
         path:":id",
