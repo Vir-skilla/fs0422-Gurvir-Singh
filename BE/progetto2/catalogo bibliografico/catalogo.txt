@@ -1,0 +1,10 @@
+Rivista [ codice ISBN: APCC2IK8SR, titolo: Elon Musk, Anno di pubblicazione: 2008, N° di pagine: 75, Periodicità: SETTIMANALE ];
+Libro [ codice ISBN: 03QK020UPU, titolo: Steve Jobs, Anno di pubblicazione: 2021, N° di pagine: 126, autore: Sam Sung, genere: Psicologico ];
+Libro [ codice ISBN: IZDQ9L4E00, titolo: Silvio Berlusconi, Anno di pubblicazione: 1989, N° di pagine: 321, autore: Zlatan Ibrahimovic, genere: Giallo ];
+Libro [ codice ISBN: TSYEG5NFYH, titolo: Mark Zuckerberg, Anno di pubblicazione: 2009, N° di pagine: 265, autore: Facebook Instagram, genere: Psicologico ];
+Rivista [ codice ISBN: ON0ZIPHFGY, titolo: Gurvir Singh, Anno di pubblicazione: 2001, N° di pagine: 69, Periodicità: MENSILE ];
+Rivista [ codice ISBN: M86JSQ8PGK, titolo: How to Hack, Anno di pubblicazione: 2020, N° di pagine: 29, Periodicità: SETTIMANALE ];
+Rivista [ codice ISBN: 30S973ZXZO, titolo: Warren Buffet, Anno di pubblicazione: 2010, N° di pagine: 97, Periodicità: SEMESTRALE ];
+Libro [ codice ISBN: 61FQKK73MP, titolo: Bill Gates, Anno di pubblicazione: 2013, N° di pagine: 196, autore: Vir Skilla, genere: Comico ];
+Libro [ codice ISBN: 38LDQD1GH6, titolo: Cristiano Ronaldo, Anno di pubblicazione: 2022, N° di pagine: 777, autore: Lionel Messi, genere: Biografia ];
+Rivista [ codice ISBN: XPO1RJ67VJ, titolo: Putin, Anno di pubblicazione: 2014, N° di pagine: 36, Periodicità: MENSILE ];
